@@ -1,3 +1,7 @@
+body{
+    background-color: blanchedalmond;
+}
+
 /*モーダル本体の指定 + モーダル外側の背景の指定*/
 .modal-container{
 	position: fixed;
