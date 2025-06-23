@@ -1,5 +1,22 @@
-body{
-    background-color: blanchedalmond;
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th,table td{
+  padding: 5px;
+  text-align: center;
+}
+
+table th{
+  color:white;
+  background-color: rgb(71, 70, 70);
+  border-right: 2px solid#fff;
+}
+
+table tr:nth-child(odd){
+  background-color: #eee
 }
 
 /*モーダル本体の指定 + モーダル外側の背景の指定*/
