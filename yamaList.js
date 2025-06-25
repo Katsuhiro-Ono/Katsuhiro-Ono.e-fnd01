@@ -6,6 +6,14 @@ let tochoNum = 0;
 
 window.onload=()=>{
 
+    //トグル切替
+    for(const el of document.getElementsByClassName("toggle")){
+        el.addEventListener("click",(e)=>{
+            e.target.classList.toggle("active");
+            e.target.nextElementSibling.classList.toggle("passive");
+        });
+    }
+
 	//モーダル閉じる
     document.getElementsByClassName("modal-close").item(0).addEventListener("click",function(){
         document.getElementsByClassName("modal-container").item(0).classList.remove("active");

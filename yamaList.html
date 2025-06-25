@@ -24,8 +24,22 @@
         </tr>
     </table>
 
-    <table class="oTable" id="toChoList">
-        <caption>登頂一覧</caption>
+    <div class="toggle">エリア別攻略状況</div>
+    <table class="oTable passive" id="koryaku">
+        <thead>
+            <tr>
+                <th>エリア</th><th>日本百名山</th><th>登頂済み</th><th>攻略状況</th>
+            </tr>
+        </thead>
+        <tbody id="koryakuBody">
+
+        </tbody>
+    </table>
+
+
+    <div class="toggle">登頂一覧</div>
+
+    <table class="oTable passive" id="toChoList">
         <thead>
             <tr>
                 <th>No.</th><th>登頂日</th><th>百名山</th><th>よみがな</th><th>標高</th><th>エリア</th><th>都道府県</th>
@@ -35,23 +49,9 @@
         </tbody>
     </table>
 
-    <div class="toggle-area">
-        エリア別攻略状況
-    </div>
-        <table class="oTable" id="koryaku">
-            <caption>エリア別攻略状況</caption>
-            <thead>
-                <tr>
-                    <th>エリア</th><th>日本百名山</th><th>登頂済み</th><th>攻略状況</th>
-                </tr>
-            </thead>
-            <tbody id="koryakuBody">
 
-            </tbody>
-        </table>
-
-    <table class="oTable" id="yama">
-        <caption>百名山一覧</caption>
+    <div class="toggle">百名山一覧</div>
+    <table class="oTable passive" id="yama">
         <thead>
             <tr>
                 <th>No.</th><th>エリア</th><th>百名山</th><th>よみがな</th><th>標高</th><th>都道府県</th><th>登頂日</th>

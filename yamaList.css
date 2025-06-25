@@ -28,6 +28,10 @@
     background-color: cadetblue;
 }
 
+.oTable.passive{
+	display:none;
+}
+
 /*モーダル本体の指定 + モーダル外側の背景の指定*/
 .modal-container{
 	position: fixed;
@@ -118,4 +122,20 @@
 
 #mReport{
 	margin: 0.5em;
+}
+
+.toggle{
+	margin:1em;
+	cursor: pointer;
+}
+.toggle::after{
+	content: " ▶"
+}
+
+.toggle.active::after{
+	content: " ▼"
+}
+
+.toggle:hover{
+	text-decoration: underline;
 }
