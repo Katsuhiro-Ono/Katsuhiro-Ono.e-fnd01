@@ -62,7 +62,7 @@
 	display: inline-block;
 	vertical-align: middle;
 	/* max-width: 500px; */
-	width: 90%;
+	max-width: 90%;
 }
 /*モーダルを閉じるボタンの指定*/
 .modal-close{
