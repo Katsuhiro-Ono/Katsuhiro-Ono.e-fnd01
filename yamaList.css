@@ -113,6 +113,7 @@
 	padding: 0;
 	overflow: hidden;
 	position: relative;
+	object-fit: scale-down;
 }
 
 #mReport{
