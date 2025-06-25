@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>エクセルからのデータ読み取り</title>
+    <link rel="stylesheet" href="xlsx.css">
+    <!-- <script type="text/javascript" src="script/xlsx.full.min.js"></script> -->
+    <!-- use version 0.20.3 -->
+    <script type="text/javascript" src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="xlsx.js"></script>
+</head>
+<body>
+    <h1>エクセルからのデータ読み取り</h1>
+    <ul>
+        <li>エクセルからデータを読み取って配列のJSON文字列として出力します。</li>
+        <li>一覧表に表示するデータをエクセルで整備するために用意しました。</li>
+        <li>読み取ったデータはテキストファイルでダウンロードされます。</li>
+        <li>エクセルを読み取るためにライブラリ「SheetJS」を利用してます。</li>
+    </ul>
+    <h2>エクセルファイルを選択してください。</h2>
+    <input type="file" id="file" accept=".xlsx">
+    <button id = "button">読み込み開始</button>
+    <div id = "message"></div>
+    <textarea id="textarea"></textarea>
+    <button id="copy">クリップボードへコピー</button>
+   
+</body>
+</html>

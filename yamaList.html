@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="yamaList.css">
+    <script type="text/javascript" src="onoLib.js"></script>
+    <script type="text/javascript" src="yamaList.data.js"></script>
+    <script type="text/javascript" src="yamaList.js"></script>
+    <title>日本百名山攻略一覧</title>
+</head>
+<body>
+    <h1>日本百名山攻略一覧</h1>
+    <ul>
+        <li>日本百名山の一覧と、私の登頂記録です。</li>
+        <li>登頂済みの山をクリックすると、私の登山日記が表示されます。</li>
+    </ul>
+
+    <table class="oTable">
+        <tr>
+            <th>百名山<br>攻略状況</th>
+            <td id="tochoNumArea" style="padding:10px;"><div id="tochoNum" style="border-bottom: 1px solid black;">0座</div><div >100座</div></td>
+        </tr>
+    </table>
+
+    <table class="oTable" id="toChoList">
+        <caption>登頂一覧</caption>
+        <thead>
+            <tr>
+                <th>No.</th><th>登頂日</th><th>百名山</th><th>よみがな</th><th>標高</th><th>エリア</th><th>都道府県</th>
+            </tr>
+        </thead>
+        <tbody id="toChoBody">
+        </tbody>
+    </table>
+
+    <div class="toggle-area">
+        エリア別攻略状況
+    </div>
+        <table class="oTable" id="koryaku">
+            <caption>エリア別攻略状況</caption>
+            <thead>
+                <tr>
+                    <th>エリア</th><th>日本百名山</th><th>登頂済み</th><th>攻略状況</th>
+                </tr>
+            </thead>
+            <tbody id="koryakuBody">
+
+            </tbody>
+        </table>
+
+    <table class="oTable" id="yama">
+        <caption>百名山一覧</caption>
+        <thead>
+            <tr>
+                <th>No.</th><th>エリア</th><th>百名山</th><th>よみがな</th><th>標高</th><th>都道府県</th><th>登頂日</th>
+            </tr>
+        </thead>
+        <tbody id="yamaBody">
+
+        </tbody>
+    </table>
+
+    <!-- モーダル本体 -->
+    <div class="modal-container" id="modal-container">
+        <div class="modal-body">
+            <!-- 閉じるボタン -->
+            <div class="modal-close">×</div>
+            <!-- モーダル内のコンテンツ -->
+            <div class="modal-content">
+                <div id="mUpperArea">
+                    <div id="mNameArea">
+                        <div id="mName">山の名前</div>
+                        <div id="mYomi">よみがな</div>
+                    </div>
+                    <table id="mSpecArea">
+                        <tr><th>標高</th><td id="mHeight">（標高）</td></tr>
+                        <tr><th>エリア</th><td id="mArea">（エリア）</td></tr>
+                        <tr><th>都道府県</th><td id="mKen">（都道府県）</td></tr>
+                    </table>
+                </div>
+                <div id="mUnderArea">
+                    <div style="width: 50%;">
+                        <img id="mPhoto" src="" alt="記念写真">
+                    </div>
+                    <div style="width: 50%;">
+                        <div style="display: flex;margin:0.5em;" >
+                            <div id="mDate"></div>
+                            <div id="mNum" style="margin-left: auto"></div>
+                        </div>
+                        <div id="mReport"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>

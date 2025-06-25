@@ -1,0 +1,23 @@
+#file   {
+    display: block;
+    margin:5px;
+}
+
+button  {
+    display: block;
+    margin:5px;
+}
+
+#message    {
+    display: block;
+    color: red;
+    height: 2em;
+    margin:5px;
+}
+
+#textarea   {
+    display: block;
+    width: 80%;
+    height: 15em;
+    margin:5px;
+}

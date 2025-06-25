@@ -1,97 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="onoLib.js"></script>
-    <script type="text/javascript" src="data.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <title>日本百名山攻略一覧</title>
+    <meta charset="UTF-8" />
+    <title>【DIGカレッジ】プログラミング基礎 E-ラーニングコース-1：最終発表会</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>日本百名山攻略一覧</h1>
-    <ul>
-        <li>日本百名山の一覧と、私の登頂記録です。</li>
-        <li>登頂済みの山をクリックすると、私の登山日記が表示されます。</li>
-    </ul>
-
-    <table class="oTable">
+    <h1>【DIGカレッジ】<br>　プログラミング基礎 <br>　E-ラーニングコース-1：最終発表会</h1>
+    <table class="table_design01">
         <tr>
-            <th>百名山<br>攻略状況</th>
-            <td id="tochoNumArea" style="padding:10px;"><div id="tochoNum" style="border-bottom: 1px solid black;">0座</div><div >100座</div></td>
+            <th colspan="2">発表者</th>
+            <td>出席番号11番<br>小野　克浩（おの　かつひろ）</td>
+        </tr>
+        <tr>
+            <th colspan="2">テーマ</th>
+            <td>百名山攻略一覧と詳細レポートの表示</td>
+        </tr>
+        <tr>
+            <th colspan="2">選定理由</th>
+            <td>
+                <ul>
+                    <li>仕事上でよく使われそうな画面構成（一覧＆詳細）</li>
+                    <li>データをもとに動的に表示したい</li>
+                    <li>趣味の百名山登山を材料にすると面白そう</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="2">成果物</th>
+            <th><a href="xlsx.html" target="_blank">データ取り込み</a></th>
+            <td>
+                <ul>
+                    <li>表示する百名山データはエクセルで作りこみ</li>
+                    <li>エクセルからjavacriptの配列データ作成</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th><a href="yamaList.html" target="_blank">百名山攻略一覧</a></th>
+            <td>
+                <ul>
+                    <li>攻略状況（％）の表示</li>
+                    <li>エリア別攻略状況（％）の表示</li>
+                    <li>登頂履歴の一覧表示</li>
+                    <li>百名山の一覧表示</li>
+                    <li>登頂の詳細レポート（モーダル）</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">今回やってみた感想</th>
+            <td>
+                <ul>
+                    <li>エクセルからのデータ抽出は業務で使えそう（申請業務など）</li>
+                    <li>一覧表はライブラリを使うと便利だが、今回は手組みで実装<br>
+                    ⇒ライブラリの偉大さを実感した（積極的に活用したい）</li>
+                    <li>細かいレイアウトは、巧みなCSSの駆使が必須！<br>
+                        ⇒「display:flex」の世界は奥が深い（沼にはまりそう）
+                    </li>
+                    <li>classは、汎用的なパーツをつくるのにとても便利と理解<br>
+                        ⇒classを指定したcss、eventも沼にはまりそう
+                    </li>
+                    <li>リファクタリングに終わりはないので適度にキリを付けること<br>
+                        ⇒もっと良い方法がつぎつぎに現れる(趣味と仕事の一線）                )
+                    </li>
+                    <li>自分（チーム？）の定石（型）を確立していくことが重要と感じた<br>（量をこなすために）</li>
+                    <li>今回、一番大変だったのは、登頂レポートを作ることでした(^-^;</li>
+                </ul>
+            </td>
         </tr>
     </table>
-
-    <table class="oTable" id="toChoList">
-        <caption>登頂一覧</caption>
-        <thead>
-            <tr>
-                <th>No.</th><th>登頂日</th><th>百名山</th><th>よみがな</th><th>標高</th><th>エリア</th><th>都道府県</th>
-            </tr>
-        </thead>
-        <tbody id="toChoBody">
-        </tbody>
-    </table>
-
-
-    <table class="oTable" id="koryaku">
-        <caption>エリア別攻略状況</caption>
-        <thead>
-            <tr>
-                <th>エリア</th><th>日本百名山</th><th>登頂済み</th><th>攻略状況</th>
-            </tr>
-        </thead>
-        <tbody id="koryakuBody">
-
-        </tbody>
-    </table>
-    <table class="oTable" id="yama">
-        <caption>百名山一覧</caption>
-        <thead>
-            <tr>
-                <th>No.</th><th>エリア</th><th>百名山</th><th>よみがな</th><th>登頂日</th>
-            </tr>
-        </thead>
-        <tbody id="yamaBody">
-
-        </tbody>
-    </table>
-
-    <!-- モーダル本体 -->
-    <div class="modal-container" id="modal-container">
-        <div class="modal-body">
-            <!-- 閉じるボタン -->
-            <div class="modal-close">×</div>
-            <!-- モーダル内のコンテンツ -->
-            <div class="modal-content">
-                <div id="mUpperArea">
-                    <div id="mNameArea">
-                        <div id="mName">山の名前</div>
-                        <div id="mYomi">よみがな</div>
-                    </div>
-                    <table id="mSpecArea">
-                        <tr><th>標高</th><td id="mHeight">（標高）</td></tr>
-                        <tr><th>エリア</th><td id="mArea">（エリア）</td></tr>
-                        <tr><th>都道府県</th><td id="mKen">（都道府県）</td></tr>
-                    </table>
-                </div>
-                <div id="mUnderArea">
-                    <div style="width: 50%;display: flex;">
-                        <img id="mPhoto" src="" alt="記念写真">
-                    </div>
-                    <div style="width: 50%;">
-                        <div style="display: flex;margin:0.5em;" >
-                            <div id="mDate"></div>
-                            <div id="mNum" style="margin-left: auto"></div>
-                        </div>
-                        <div id="mReport"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  
 </body>
 </html>
