@@ -1,6 +1,6 @@
 .table_design01 {
   border-collapse: collapse;
-  width: 100%;
+  /* width: 100%; */
 }
 .table_design01 th, .table_design01 td {
   border: 2px solid #fff;
