@@ -16,6 +16,13 @@ window.onload=()=>{
         e.target.src = "photos/noimage.jpg";
     });
 
+    //画像読み込み後にモーダル表示する
+    document.getElementById("mPhoto").addEventListener("load",(e)=>{
+        const container = document.getElementsByClassName("modal-container");
+        container.item(0).classList.add("active");
+    });
+
+
     //攻略状況の集計
     const Area={};
     const Kekka={};
@@ -97,16 +104,14 @@ function DispReport(index){
     document.getElementById("mArea").innerText= tableData[index][4];
     document.getElementById("mKen").innerText= tableData[index][5];
     if(tableData[index][8]!==null){
-        document.getElementById("mPhoto").src= "photos/" + tableData[index][8] + ".jpg";
         document.getElementById("mDate").innerText= tableData[index][6];
         document.getElementById("mNum").innerText= `${tableData[index][8]}座目／登頂 ${tochoNum}座` ;
         document.getElementById("mReport").innerText= tableData[index][7];
+        document.getElementById("mPhoto").src= "photos/" + tableData[index][8] + ".jpg";
     }else{
-        document.getElementById("mPhoto").src= "photos/noimage.jpg";
         document.getElementById("mDate").innerText= "未登頂";
         document.getElementById("mReport").innerText= "レポートなし";
-    }
+        document.getElementById("mPhoto").src= "photos/noimage.jpg";
+   }
     
-    const container = document.getElementsByClassName("modal-container");
-    container.item(0).classList.add("active");
 }
